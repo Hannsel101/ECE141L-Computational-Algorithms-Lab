@@ -2,19 +2,72 @@
 //
 
 #include <iostream>
+#include "Base_List.h"
+
+void Demo1();
+void Demo2();
+void Demo3();
+void Demo4();
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int demo = 0;
+
+    if (demo == 0)
+    {
+        Demo1();
+    }
+    else if (demo == 1)
+    {
+        Demo2();
+    }
+    else if (demo == 2)
+    {
+        Demo3();
+    }
+    else if (demo == 3)
+    {
+        Demo4();
+    }
+    else
+    {
+        cout << "INVALID SELECTION!\n";
+    }
+
+    return(EXIT_SUCCESS);
 }
+//**********************************************************//
+// Demo Functions Begin
+//**********************************************************//
+void Demo1()
+{
+    string inputFile = "Demo1_1.txt";
+    string inputFile2 = "Demo1_2.txt";
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+    Base_List<string> testing(inputFile);
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+    cout << "Printing contents from first file...\n\n";
+    testing.write();
+    cout << "------------------------------------\n";
+
+    testing.read(inputFile2);
+
+    cout << endl << "Printing contents from second file...\n\n";
+    testing.write();
+    cout << "------------------------------------\n";
+}
+//**********************************************************//
+void Demo2()
+{
+
+}
+//**********************************************************//
+void Demo3()
+{
+
+}
+//**********************************************************//
+void Demo4()
+{
+
+}

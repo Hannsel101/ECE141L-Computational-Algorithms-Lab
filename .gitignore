@@ -30,3 +30,5 @@ Lab1/ECE141L_01/ECE141L_01.vcxproj.filters
 Lab1/ECE141L_01/ECE141L_01.vcxproj.user
 Lab1/main.cpp
 Lab1/vc140.pdb
+Lab1/ECE141L_01/Debug/Base_List.obj
+Lab1/ECE141L_01/.vs/ECE141L_01/v16/ipch/AutoPCH/84abebb60e106295/INT_LIST.ipch
