@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Base_List.h"
+#include "Int_List.h"
 
 void Demo1();
 void Demo2();
@@ -11,7 +12,19 @@ void Demo4();
 
 int main()
 {
-    int demo = 0;
+    int demo = 2;
+
+    fstream outFile;
+    outFile.open("inputInts2.txt");
+
+   /* for (int i = -1000; i < 1001; ++i)
+    {
+        outFile << i << " ";
+        if ((i % 15) == 0)
+            outFile << "\n";
+    }*/
+
+    outFile.close();
 
     if (demo == 0)
     {
@@ -59,11 +72,28 @@ void Demo1()
 //**********************************************************//
 void Demo2()
 {
+    string inputFile = "inputInts.txt";
+    string inputFile2 = "inputInts2.txt";
 
+    Int_List demo2_list(inputFile2);
+    demo2_list.write();
+    cout << "\n\n";
+    demo2_list.read(inputFile2);
+    demo2_list.write();
 }
 //**********************************************************//
 void Demo3()
 {
+    string inputFile = "inputInts.txt";
+    string inputFile2 = "inputInts2.txt";
+
+    Int_List demo2_list(inputFile2);
+    demo2_list.write();
+    cout << "\n\n";
+    demo2_list.sum3_brute_force();
+    cout << endl << endl;
+
+    demo2_list.sum3_bin_search();
 
 }
 //**********************************************************//

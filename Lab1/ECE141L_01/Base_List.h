@@ -75,9 +75,12 @@ void Base_List<type>::write()
 {
 	for (int i = 0; i < list.size(); ++i)
 	{
-		cout << list.at(i) << endl;
+		cout << list.at(i) << " ";
+		if (((i % 15) == 0) && i!=0)
+			cout << endl;
+		
 	}
-	cout << "Size is now: " << size << endl;
+	cout << endl << "Size is now: " << size << endl;
 }
 //**********************************************************//
 template <class type>
