@@ -2,8 +2,9 @@
 //
 
 #include <iostream>
+#include "testFunctions.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    testDoubly();
 }

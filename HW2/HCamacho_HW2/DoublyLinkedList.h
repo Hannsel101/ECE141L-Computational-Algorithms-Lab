@@ -1,5 +1,8 @@
 #pragma once
 #include "Node.h"
+#include <iostream>
+
+using namespace std;
 
 template<class type>
 class DoublyLinkedList
@@ -40,6 +43,9 @@ class DoublyLinkedList
 		int getSize();
 		// Returns the number of elements in the list
 
+		void print();
+		// Prints the entire list in order from front to back
+
 	private:
 		Node<type>* head;
 		Node<type>* tail;
@@ -49,7 +55,7 @@ class DoublyLinkedList
 		bool isEmpty();
 		// Helper function that returns true if list of size 0
 
-		bool destroyList();
+		void destroyList();
 		// Helper function that deallocates all the memory allocated
 		// by the nodes in the list
 
@@ -121,19 +127,19 @@ void DoublyLinkedList<type>::insertAt(type value, int index)
 template<class type>
 void DoublyLinkedList<type>::removeFront()
 {
-
+	remove(0);
 }
 //******************************************************************
 template<class type>
 void DoublyLinkedList<type>::removeBack()
 {
-
+	remove(size - 1);
 }
 //******************************************************************
 template<class type>
 void DoublyLinkedList<type>::removeAt(int index)
 {
-
+	remove(index);
 }
 //******************************************************************
 template<class type>
@@ -143,21 +149,50 @@ int DoublyLinkedList<type>::getSize()
 }
 //******************************************************************
 template<class type>
+void DoublyLinkedList<type>::print()
+{
+	cout << "List: ";
+	if (isEmpty())
+	{
+		cout << "EMPTY\n";
+		return;
+	}
+
+	Node<type>* temp = head;
+	while (temp != nullptr)
+	{
+		cout << temp->data << "  ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+//******************************************************************
+template<class type>
 bool DoublyLinkedList<type>::isEmpty()
 {
 	return (size == 0);
 }
 //******************************************************************
 template<class type>
-bool DoublyLinkedList<type>::destroyList()
+void DoublyLinkedList<type>::destroyList()
 {
-
+	// Keep removing the head node until the list is empty
+	while (head != nullptr)
+	{
+		remove(0);
+	}
+	size = 0;
 }
 //******************************************************************
 template<class type>
 Node<type>* DoublyLinkedList<type>::find(type value)
 {
-
+	if (isEmpty())// Empty list case
+	{
+		cout << "Error: Cannot search an empty list";
+		return nullptr;
+	}
+	
 }
 //******************************************************************
 template<class type>
@@ -225,7 +260,7 @@ void DoublyLinkedList<type>::remove(int index)
 	}
 
 	// Temporary pointer to point to node set for deletion
-	Node<type>* temp;
+	Node<type>* temp = head;
 
 	if (size == 1)// Single node list case
 	{
