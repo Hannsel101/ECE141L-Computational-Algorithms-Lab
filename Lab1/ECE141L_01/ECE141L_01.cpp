@@ -8,7 +8,6 @@
 void Demo1();
 void Demo2();
 void Demo3();
-void Demo4();
 
 int main()
 {
@@ -17,12 +16,6 @@ int main()
     fstream outFile;
     outFile.open("inputInts2.txt");
 
-   /* for (int i = -1000; i < 1001; ++i)
-    {
-        outFile << i << " ";
-        if ((i % 15) == 0)
-            outFile << "\n";
-    }*/
 
     outFile.close();
 
@@ -37,10 +30,6 @@ int main()
     else if (demo == 2)
     {
         Demo3();
-    }
-    else if (demo == 3)
-    {
-        Demo4();
     }
     else
     {
@@ -94,10 +83,5 @@ void Demo3()
     cout << endl << endl;
 
     demo2_list.sum3_bin_search();
-
-}
-//**********************************************************//
-void Demo4()
-{
 
 }
