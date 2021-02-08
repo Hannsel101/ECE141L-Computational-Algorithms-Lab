@@ -213,5 +213,59 @@ void DoublyLinkedList<type>::insert(type value, int index)
 template<class type>
 void DoublyLinkedList<type>::remove(int index)
 {
+	if (isEmpty())// Empty list condition
+	{
+		cout << "Error: Cannot remove from empty list\n";
+		return;
+	}
+	else if (index < 0 || index >= size)// Out of bounds checking
+	{
+		cout << "Error: Cannot delete from out of bounds index\n";
+		return;
+	}
 
+	// Temporary pointer to point to node set for deletion
+	Node<type>* temp;
+
+	if (size == 1)// Single node list case
+	{
+		// Set temp to head and set head = tail = nullptr
+		temp = head;
+		tail = nullptr;
+		head = tail;
+	}
+	else if (index == 0)// Remove front
+	{
+		// set a pointer to head and move head to the next node
+		temp = head;
+		head = head->next;
+
+		// Remove pointers referencing node to be deleted
+		temp->next = nullptr;
+		head->prev = nullptr;
+	}
+	else if (index == size - 1)// Remove back
+	{
+		// set a pointer to tail and move tail back one node
+		temp = tail;
+		tail = tail->prev;
+
+		// Remove pointers referencing node to be deleted
+		temp->prev = nullptr;
+		tail->next = nullptr;
+	}
+	else// Delete a node in between head and tail
+	{
+		// Iterate to the node to be deleted
+		for (int i = 0; i <= index-1; ++i)
+			temp = temp->next;
+
+		// Derefernce the node to be deleted
+		temp->prev->next = temp->next;
+		temp->next->prev = temp->prev;
+		temp->next = nullptr;
+		temp->prev = nullptr;
+	}
+	delete temp;
+	--size;
 }
