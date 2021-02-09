@@ -46,6 +46,14 @@ class DoublyLinkedList
 		void print();
 		// Prints the entire list in order from front to back
 
+		void setHead(Node<type>* headptr);
+		// Sets the head node to the head of a new list
+
+		Node<type>* getTail();
+
+		Node<type>* getHead();
+
+		void setSize(int value);
 	private:
 		Node<type>* head;
 		Node<type>* tail;
@@ -303,4 +311,38 @@ void DoublyLinkedList<type>::remove(int index)
 	}
 	delete temp;
 	--size;
+}
+//******************************************************************
+template<class type>
+void DoublyLinkedList<type>::setHead(Node<type>* headptr)
+{
+	if (size == 0)
+	{
+		head = headptr;
+		tail = headptr;
+		size++;
+		while (tail->next != nullptr)
+		{
+			++size;
+			tail = tail->next;
+		}
+	}
+}
+
+template<class type>
+Node<type>* DoublyLinkedList<type>::getHead()
+{
+	return head;
+}
+
+template<class type>
+Node<type>* DoublyLinkedList<type>::getTail()
+{
+	return tail;
+}
+
+template<class type>
+void DoublyLinkedList<type>::setSize(int value)
+{
+	size = value;
 }
