@@ -1,0 +1,2 @@
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\Debug\ECE141_HCamacho_Exam1.exe
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\Debug\ECE141_HCamacho_Exam1.pdb

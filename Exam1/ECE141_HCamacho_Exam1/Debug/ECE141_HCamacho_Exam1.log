@@ -1,0 +1,7 @@
+﻿  ECE141_HCamacho_Exam1.cpp
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\ECE141_HCamacho_Exam1.cpp(47,11): warning C4101: 'aver': unreferenced local variable
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\ECE141_HCamacho_Exam1.cpp(89,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\ECE141_HCamacho_Exam1.cpp(100,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\ECE141_HCamacho_Exam1.cpp(101,16): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\ECE141_HCamacho_Exam1.cpp(152,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  ECE141_HCamacho_Exam1.vcxproj -> G:\GithubRepos\ECE141L-Computational-Algorithms-Lab\Exam1\ECE141_HCamacho_Exam1\Debug\ECE141_HCamacho_Exam1.exe
