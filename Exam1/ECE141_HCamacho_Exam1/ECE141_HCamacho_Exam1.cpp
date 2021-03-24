@@ -148,7 +148,6 @@ void testLazyPrim()
         Edge e = testPrim.front();
         testPrim.pop();
         e.toString();
-        cout << "weight: " << e.getWeight() << endl;
         totalWeight += e.getWeight();
     }
     cout << "\nTotal Weight: " << totalWeight << endl;
