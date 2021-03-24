@@ -1,13 +1,42 @@
 #pragma once
 #include <iostream>
+#include <typeinfo>
+
 using namespace std;
 
+template <class Value>
+class nullClass
+{
+public:
+	Value nullVal;
+
+	nullClass()
+	{
+		string varS = "0";
+		char varC;
+		int varI = 0;
+		float varF = 0.0;
+		double varD = 0.0;
+
+		if (typeid(nullVal).name() == typeid(varS).name())
+			nullVal = '\0';
+		else if (typeid(nullVal).name() == typeid(varC).name())
+			nullVal = '\0';
+		else if (typeid(nullVal).name() == typeid(varI).name())
+			nullVal = (int)NULL;
+		else if (typeid(nullVal).name() == typeid(varF).name())
+			nullVal = (float)NULL;
+		else if (typeid(nullVal).name() == typeid(varD).name())
+			nullVal = (double)NULL;
+	}
+};
 
 template <class Value>
 class Node
 {
 	public:
-		Value value = NULL;
+		nullClass<Value> nObj;
+		Value value = nObj.nullVal;
 		Node<Value>* next[256];
 
 		Node()
@@ -32,18 +61,19 @@ class TrieST
 
 		void put(string key, Value val) { root = put(root, key, val, 0); }
 
-		bool contains(string key) { return (get(key) != NULL); }
+		bool contains(string key) { return (get(key) != nObj.nullVal); }
 
 		Value get(string key)
 		{
 			Node<Value>* x = get(root, key, 0);
-			if (x == nullptr) return NULL;
+			if (x == nullptr) return nObj.nullVal;
 			return x->value;
 		}
 
 	private:
 		int R;
 		Node<Value>* root;
+		nullClass<Value> nObj;
 
 		Node<Value>* put(Node<Value>* x, string key, Value val, int d)
 		{
